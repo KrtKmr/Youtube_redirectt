@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Link Redirection</title>
+  <script>
+    function redirectToYouTubeApp() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      
+      // Check if the user agent is a mobile device
+      if (/android/i.test(userAgent)) {
+        // Replace "YOUR_YOUTUBE_CHANNEL_LINK" with your actual YouTube channel link
+        var youtubeLink = "https://www.youtube.com/channel/UCWJafMDuUQS9aS5Ynn-9bxg";
+        
+        // Construct the YouTube app URL
+        var youtubeAppUrl = "vnd.youtube://" + youtubeLink;
+        
+        // Redirect to the YouTube app
+        window.location.href = youtubeAppUrl;
+      } else {
+        // Redirect to the YouTube webpage
+        window.location.href = "https://www.youtube.com/channel/YOUR_CHANNEL_ID";
+      }
+    }
+  </script>
+</head>
+<body onload="redirectToYouTubeApp()">
+</body>
+</html>
